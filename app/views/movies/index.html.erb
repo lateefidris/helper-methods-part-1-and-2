@@ -2,17 +2,16 @@
   List of all movies
 </h1>
 
-<h2><%=movies_url%> </h2>
 
 <hr>
 
 <div>
-  <a href="<%= new_movie_path%>">Add a new movie</a>
+  <%= link_to('Add a new movie', new_movie_path) %>
 </div>
 
 <hr>
 
-<table>
+<table border=1 >
   <tr>
     <th>
       ID
@@ -60,10 +59,9 @@
     </td>
 
     <td>
-      <a href="<%= movie_path(a_movie.id) %>">
-        Show details
-      </a>
+      <%= link_to('Show details', a_movie) %>
     </td>
   </tr>
   <% end %>
 </table>
+
