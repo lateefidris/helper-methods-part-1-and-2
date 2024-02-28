@@ -8,12 +8,12 @@
   <div>
     
     <%= label_tag :title_box,"Title" %>
-    <%= text_field_tag :query_title, @the_movie.title %>
+    <%= text_field_tag "movie[title]", @the_movie.title %>
   </div>
 
   <div>
     <%= label_tag :description_box,"Description" %>
-    <%= text_area_tag :query_description %>
+    <%= text_area_tag "movie[description]" %>
   </div>
 
   <%= button_tag "Create movie" %>

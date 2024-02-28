@@ -23,8 +23,8 @@ class MoviesController < ApplicationController
 
   def create
     @the_movie = Movie.new
-    @the_movie.title = params.ffetch(:query_title)
-    @the_movie.description = params.fetch(:query_description)
+    @the_movie.title = params.fetch(:movie).fetch(:title)
+    @the_movie.description = params.fetch(:movie).fetch(:description)
 
     if @the_movie.valid?
       @the_movie.save
@@ -41,8 +41,8 @@ class MoviesController < ApplicationController
   def update
     the_movie = Movie.find(params.fetch(:id))
 
-    the_movie.title = params.fetch(:query_title)
-    the_movie.description = params.fetch(:query_description)
+    the_movie.title = params.fetch(:movie).fetch(:title)
+    the_movie.description = params.fetch(:movie).fetch(:description)
 
     if the_movie.valid?
       the_movie.save
